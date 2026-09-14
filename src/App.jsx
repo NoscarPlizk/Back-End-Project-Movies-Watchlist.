@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { BookedList } from "./content/hotelContent"; 
+import { BookedList } from "./content/share_content/hotelContent"; 
 import useLocalStorage from "use-local-storage";
 import AuthPages from "./pages/AuthPages";
 import Layout from "./layout/Layout";
@@ -11,7 +11,9 @@ import AllBookedList from "./pages/AllBookedList";
 
 export default function App() {
   const [ token, setToken ] = useLocalStorage('token', '');
-  const APIurl = "https://c05a3a4b-6ce4-4b73-bcb4-4adf00190f87-00-1cbacayl5uma6.pike.replit.dev/";
+  const APIurl = import.meta.env.VITE_NEON_POOL_LINK;
+
+  // console.log(APIurl);
 
   return (
     <BookedList.Provider value={{ token, setToken, APIurl }}>

@@ -2,8 +2,8 @@ import { Row, Col, Container, Button, Modal, Card } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import axios from "axios";
-import { InfoContext } from "../content/infoContent";
-import { BookedList } from '../content/hotelContent';
+import { InfoContext } from "../content/share_content/infoContent";
+import { BookedList } from '../content/share_content/hotelContent';
 
 export default function ViewHotel() {
   const [ showModal, setShowModal ] = useState(false)
