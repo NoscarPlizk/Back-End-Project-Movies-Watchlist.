@@ -5,6 +5,8 @@ import { useState, useContext } from 'react';
 import { BookedList } from '../content/share_content/hotelContent';
 import { InfoContext } from "../content/share_content/infoContent";
 
+import SearchBar from '../global_component/SearchBar';
+
 export default function Layout() {
   const token = useContext(BookedList).token;
 
@@ -42,7 +44,8 @@ export default function Layout() {
             </Nav.Link>
           </Nav>
         </Container>
-        <Card className="mx-auto">
+        {/* <SearchBar /> */}
+        {/* <Card className="mx-auto">
           <Card.Body>
             <Row>
               <Col>
@@ -82,7 +85,7 @@ export default function Layout() {
               </Col>
             </Row>
           </Card.Body> 
-        </Card>        
+        </Card>         */}
       </Navbar>
       <InfoContext.Provider value={{ initialDate, dueDate, adultPax, childPax }}>
         <Outlet />

@@ -3,7 +3,7 @@ import { BookedList } from "./content/share_content/hotelContent";
 import useLocalStorage from "use-local-storage";
 import AuthPages from "./pages/AuthPages";
 import Layout from "./layout/Layout";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import ViewHotel from "./pages/ViewHotel";
 import UserPage from "./pages/UserPage";
 import Payment from "./pages/payments/Payment";
@@ -12,8 +12,6 @@ import AllBookedList from "./pages/AllBookedList";
 export default function App() {
   const [ token, setToken ] = useLocalStorage('token', '');
   const APIurl = import.meta.env.VITE_NEON_POOL_LINK;
-
-  // console.log(APIurl);
 
   return (
     <BookedList.Provider value={{ token, setToken, APIurl }}>

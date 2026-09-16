@@ -1,5 +1,5 @@
 import { Row } from "react-bootstrap";
-import Posts from "./RightSectors/Posts";
+import Posts from "./Posts";
 
 export default function RightSector() {
   return (
