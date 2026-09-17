@@ -2,23 +2,7 @@ import { Row, Col, Container, Card ,Image } from "react-bootstrap";
 // import LeftBar from "./component/LeftBar"
 // import RightSector from "./component/RightSector";
 import SearchBar from "../../global_component/SearchBar";
-
-function MoviesCard() {
-  const BoxSize = {
-    width: '300px', height: '400px'
-  }
-  
-  return (
-    <div style={BoxSize} className="border rounded-2">
-      <img />
-      <div>
-        <h5>Title</h5>
-        <div>* Star</div>
-        <button>List +</button>
-      </div>
-    </div>
-  )
-}
+import MoviesSector from "./component/MoviesSector";
 
 export default function Home() {
   const StyleFixPosition = `
@@ -27,6 +11,7 @@ export default function Home() {
     p-5
     justify-content-between align-items-center
   `
+  const Maybe = 'A'
 
   return (
     <div className="d-flex flex-column justify-content-between align-items-center">
@@ -34,19 +19,7 @@ export default function Home() {
         <h2>Find your next movie</h2>
         <SearchBar /> 
       </section>
-      <section className={StyleFixPosition}>
-        <div className="d-flex w-75 justify-content-between align-items-center">
-          <h2>Popular Movies</h2>
-          <button className="btn">
-            {`View All >`} 
-          </button>
-        </div>
-        <div className="d-flex gap-5">
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-        </div>
-      </section>
+      <MoviesSector headers={'Popular Movies'} movieAPIlink={undefined}/>    
     </div>    
   );
 }
